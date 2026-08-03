@@ -1,0 +1,11 @@
+{
+  "name": "Salama Kenya - GBV Support & Safety",
+  "description": "Trauma-informed, bilingual (English & Kiswahili) emergency support, safe reporting, resource locator, and safety planning for GBV survivors in Kenya.",
+  "requestFramePermissions": [
+    "geolocation",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
