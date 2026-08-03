@@ -92,14 +92,34 @@ npm start
 
 ---
 
-## 🌐 Deployment Guide (Cloud Run, Render, Railway, or Vercel)
+## 🌐 Deployment Guide (Render, Railway, or Google Cloud Run)
+
+### ⚠️ IMPORTANT: Fixing the Render Error (`Cannot find module '/opt/render/project/src/dist/server.cjs'`)
+If your Render deployment fails with `Error: Cannot find module '/opt/render/project/src/dist/server.cjs'`, it means Render **only ran `bun install`** and skipped building the production bundle.
+
+#### ✅ How to Fix on Render (Takes 10 Seconds):
+1. In your Render Dashboard, open your service (**usalama-kenya**) and go to **Settings** → **Build & Deploy**.
+2. Change the **Build Command** to:
+   ```bash
+   bun install && bun run build
+   ```
+   *(Or if using npm: `npm install && npm run build`)*
+3. Set the **Start Command** to:
+   ```bash
+   node dist/server.cjs
+   ```
+4. Click **Save Changes** and click **Manual Deploy → Deploy latest commit**.
+
+> **Note**: A `render.yaml` Blueprint file is now included in the root directory so Render will automatically detect `bun install && bun run build` on future Blueprint deployments.
+
+---
 
 ### Option A: Render / Railway / Fly.io (Recommended for Full-Stack)
 1. Push your code to your GitHub repository.
 2. In your cloud provider dashboard (e.g., [Render.com](https://render.com) or [Railway.app](https://railway.app)):
    - **Create a new Web Service** and connect your GitHub repository.
-   - **Build Command**: `npm install && npm run build`
-   - **Start Command**: `npm start`
+   - **Build Command**: `bun install && bun run build` (or `npm install && npm run build`)
+   - **Start Command**: `node dist/server.cjs`
    - **Environment Variables**:
      - `NODE_ENV=production`
      - `PORT=3000` (or default port assigned by provider)
