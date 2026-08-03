@@ -473,34 +473,46 @@ export default function App() {
       </main>
 
       {/* Sleek Interface Footer */}
-      <footer className="px-4 sm:px-8 py-4 bg-slate-100 border-t border-slate-200 flex flex-wrap justify-between items-center gap-4 text-[11px] text-slate-500 font-medium">
-        <div className="flex flex-wrap gap-4 uppercase tracking-wider font-bold text-slate-600">
-          <span className="flex items-center gap-1">
-            <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
-            {t.privateMode}
-          </span>
-          <span>{t.noHistory}</span>
-          <span>{t.e2eEncrypted}</span>
+      <footer className="px-4 sm:px-8 py-5 bg-slate-100 border-t border-slate-200 flex flex-col gap-3 text-[11px] text-slate-500 font-medium">
+        <div className="flex flex-wrap justify-between items-center gap-4">
+          <div className="flex flex-wrap gap-4 uppercase tracking-wider font-bold text-slate-600">
+            <span className="flex items-center gap-1">
+              <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
+              {t.privateMode}
+            </span>
+            <span>{t.noHistory}</span>
+            <span>{t.e2eEncrypted}</span>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <button
+              onClick={() => setLowDataMode(!lowDataMode)}
+              className={`px-2.5 py-1 rounded-lg border font-semibold ${
+                lowDataMode
+                  ? 'bg-amber-100 border-amber-300 text-amber-800'
+                  : 'bg-white border-slate-300 text-slate-600'
+              }`}
+            >
+              {lowDataMode ? '⚡ Low-Data Mode: ON' : 'Low-Data Mode: OFF'}
+            </button>
+            <button
+              onClick={clearHistoryAndCache}
+              className="text-slate-500 hover:text-rose-600 underline font-semibold"
+            >
+              {t.clearHistoryBtn}
+            </button>
+            <span className="hidden md:inline">{t.dataActNotice}</span>
+          </div>
         </div>
 
-        <div className="flex items-center gap-4">
-          <button
-            onClick={() => setLowDataMode(!lowDataMode)}
-            className={`px-2.5 py-1 rounded-lg border font-semibold ${
-              lowDataMode
-                ? 'bg-amber-100 border-amber-300 text-amber-800'
-                : 'bg-white border-slate-300 text-slate-600'
-            }`}
-          >
-            {lowDataMode ? '⚡ Low-Data Mode: ON' : 'Low-Data Mode: OFF'}
-          </button>
-          <button
-            onClick={clearHistoryAndCache}
-            className="text-slate-500 hover:text-rose-600 underline font-semibold"
-          >
-            {t.clearHistoryBtn}
-          </button>
-          <span className="hidden md:inline">{t.dataActNotice}</span>
+        {/* Copyright & Legal Notice Row */}
+        <div className="pt-2.5 border-t border-slate-200/80 flex flex-wrap justify-between items-center gap-2 text-[11px] text-slate-500">
+          <div className="font-medium text-slate-600">
+            {t.copyrightNotice}
+          </div>
+          <div className="text-slate-400">
+            {t.allRightsReserved}
+          </div>
         </div>
       </footer>
 

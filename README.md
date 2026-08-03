@@ -146,3 +146,9 @@ If your Render deployment fails with `Error: Cannot find module '/opt/render/pro
 - **Child Helpline**: `116`
 - **Police Emergency**: `999` / `112`
 - **CREAW Legal & Shelter Aid**: `0800-720-186`
+
+---
+
+## 📜 Copyright & Legal
+**© 2026 Usalama Kenya (Salama Kenya)** • Built for civic safety and the protection of GBV survivors across Kenya.  
+All rights reserved. Designed in full compliance with the **Kenya Data Protection Act 2019** (Section 5 & 41) to ensure survivor confidentiality and data minimization.

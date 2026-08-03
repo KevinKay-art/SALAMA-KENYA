@@ -101,6 +101,8 @@ export interface Translations {
   clearHistoryBtn: string;
   lowDataToggle: string;
   shakeToExitToggle: string;
+  copyrightNotice: string;
+  allRightsReserved: string;
 }
 
 export const translations: Record<Language, Translations> = {
@@ -197,7 +199,9 @@ export const translations: Record<Language, Translations> = {
     disguiseDesc: 'Switch the app screen to look like a Weather Forecast, Notes app, or Calculator to protect against snooping.',
     clearHistoryBtn: 'Clear App Cache & Session',
     lowDataToggle: 'Low-Data Mode (No Map Tiles / Fast 3G)',
-    shakeToExitToggle: 'Enable Triple-Tap / Shake Panic Exit'
+    shakeToExitToggle: 'Enable Triple-Tap / Shake Panic Exit',
+    copyrightNotice: '© 2026 Usalama Kenya (Salama Kenya) • Built for civic safety & protection of GBV survivors across Kenya.',
+    allRightsReserved: 'All Rights Reserved • Kenya Data Protection Act 2019 Compliant • Helpline 1195 Toll-Free'
   },
   sw: {
     appTitle: 'Usalama Kenya',
@@ -292,6 +296,8 @@ export const translations: Record<Language, Translations> = {
     disguiseDesc: 'Badilisha muonekano uonekane kama Utabiri wa Hali ya Hewa, Dokezo au Kikokotozi ili kujilinda.',
     clearHistoryBtn: 'Futa Kumbukumbu Zote za Programu',
     lowDataToggle: 'Hali ya Data Ndogo (Bila Ramani / Kasi kwa 3G)',
-    shakeToExitToggle: 'Washa Njia ya Kutikisika / Kugusa Mara 3 Kuzima'
+    shakeToExitToggle: 'Washa Njia ya Kutikisika / Kugusa Mara 3 Kuzima',
+    copyrightNotice: '© 2026 Usalama Kenya (Salama Kenya) • Imetengenezwa kwa ajili ya usalama wa jamii na ulinzi wa manusura wa ukatili Kenya.',
+    allRightsReserved: 'Haki Zote Zimehifadhiwa • Inazingatia Sheria ya Ulinzi wa Data Kenya 2019 • Nambari ya Msaada 1195 Bila Malipo'
   }
 };
